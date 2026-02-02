@@ -1,0 +1,564 @@
+/* استایل برای فیلد تکرارشونده توکن ایتا */
+#eitaa-tokens-repeater .repeater-row {display: flex;gap: 10px;align-items: center;padding: 10px;border: 1px solid #ddd;margin-bottom: 10px;background: #f9f9f9;}
+#eitaa-tokens-repeater .repeater-row input {flex: 1;}
+#eitaa-tokens-repeater .add-row {margin-top: 10px;}
+.jay-login-register-description-note-email {background-color: #bbffef;
+  color: #1d2327;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  text-align: right;
+  direction: rtl;
+}
+/* استایل برای آکاردیون در صفحه تنظیمات */
+.jay-login-register-accordion .accordion-title {cursor: pointer;
+  border: 1px solid #ccd0d4;
+  background-color: #f6f7f7;
+  padding: 8px 12px;
+  margin: 0;
+    font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  position: relative;
+  user-select: none;
+    border-radius: 3px;
+}
+.jay-login-register-accordion .accordion-title:hover {background-color: #f0f0f1;}
+.jay-login-register-accordion .accordion-title::after {
+  content: '\f140'; 
+  font-family: dashicons;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.2s ease-in-out;
+}
+.jay-login-register-accordion .accordion-title.active::after {transform: translateY(-50%) rotate(180deg); }
+.jay-login-register-accordion .accordion-content {
+  display: none;
+  padding: 1px 15px 15px 15px;
+  border: 1px solid #ccd0d4;
+  border-top: none;
+  background-color: #fff;border-bottom-left-radius: 3px;border-bottom-right-radius: 3px;
+}
+.jay-login-register-accordion .accordion-content .form-table {margin-top: 10px;}
+#bale-otp-instructions-panel {background-color: #f0f6fc;border: 1px solid #72aee6;padding: 10px 20px;margin-top: 10px;border-radius: 4px;}
+#google-instructions-panel {background-color: #f0f6fc;border: 1px solid #72aee6;padding: 10px 20px;margin-top: 10px;border-radius: 4px;}
+#recaptcha-instructions-panel {background-color: #f0f6fc;border: 1px solid #72aee6;padding: 10px 20px;margin-top: 10px;border-radius: 4px;}
+#recaptcha-instructions-panel ul {list-style: disc;padding-right: 20px;}
+.jay-login-register-description-note {background-color: #f0f6fc;border: 1px solid #72aee6;padding: 10px 20px;border-radius: 4px;display:block;}
+.jay-login-register-cards-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+.jay-login-register-cards-container .card ul {
+  text-align: right;
+  list-style: none;
+  direction: rtl;
+}
+.jay-login-register-cards-container .card ul li {
+  position: relative;
+  padding-right: 1.6em;
+  margin-bottom: 0.5em;
+}
+.jay-login-register-cards-container .card ul li::before {
+  content: "✔️";
+  position: absolute;
+  right: 0;
+  top: 0.1em;
+  color: green;
+  font-size: 1em;
+  line-height: 1;
+}
+.jay-login-register-cards-container .card img{position:relative; width: 100%;height: 100px;object-fit: scale-down;}
+.jay-login-register-cards-container .card {max-width: 100% !important; }
+.jay-login-register-cards-container .card {flex: 1; }
+.jay-login-register-cards-container .card h3 {
+    font-size: 1.1em;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+.jay-login-register-cards-container .card pre {
+    background: #f1f1f1;
+    padding: 15px;
+    border-radius: 5px;
+    direction: ltr;
+    text-align: left;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+.jay-login-register-wrap .nav-tab-wrapper {margin-bottom: 20px;}
+#custom-columns-repeater .repeater-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+}
+#custom-columns-repeater .repeater-row input,
+#custom-columns-repeater .repeater-row select {flex: 1;}
+#custom-columns-repeater .add-row {margin-top: 10px;}
+.jay-login-register-status-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    fill: #39b326; 
+}
+.column-jay_mobile .jay-login-register-ltr-text {
+    direction: ltr;
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .jay-login-register-cards-container {
+        flex-direction: column;
+    }
+}
+ 
+/* ==========================================================================
+   Modern & Minimal Style Selection Cards
+   ========================================================================== */
+
+.form-table tr:has(.jay-login-register-style-cards-wrapper) th,
+.form-table tr:has(.jay-login-register-style-cards-wrapper) td {
+    display: block;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* استایل جدید و شیک برای عنوان "قالب‌های فرم" */
+.form-table tr:has(.jay-login-register-style-cards-wrapper) th {
+    font-size: 1.2em;
+    font-weight: 600;
+    padding: 15px;
+    background: #f0f0f1;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+.jay-login-register-style-cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+.style-card {
+    background: #fff;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: transform 0.3s ease, 
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.style-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.style-card.selected {
+    border-color: var(--wp-admin-theme-color, #22b12b);
+    box-shadow: 0 8px 20px rgba(34, 113, 177, 0.2);
+}
+.dashicons-arrow-right-alt::before {
+    line-height: 30px;
+}
+.jay-relog-editing-notice {
+    background-color: #9ee4ff;
+  border: 1px solid #0f9582;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 5px;
+  color: #0e5952;
+}
+.style-card.selected::after {
+    content: '\f147'; 
+    font-family: dashicons;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #fff;
+    background-color: var(--wp-admin-theme-color, #22b12b);
+    border-radius: 50%;border: 1px solid #5dd753;
+    padding: 4px;
+    line-height: 1;
+    animation: pop-in 0.3s ease-out forwards;
+}
+@keyframes pop-in {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+.style-card-thumb {
+    padding: 0;
+    aspect-ratio: 5 / 5; 
+    overflow: hidden;
+}
+.style-card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+.style-card:hover .style-card-thumb img {
+    transform: scale(1.05);
+}
+.style-card-footer {
+    padding: 10px 5px;
+    border-top: 1px solid #f0f0f1;
+    background: #fcfcfc;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-size: 12px;
+    flex-wrap: wrap;
+    gap:10px;
+}
+.style-card-footer label {
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    width: 100%;
+  justify-content: center;
+    align-items: center;
+}
+.jay-login-register-edit-style-button {
+    border: 1px solid #ccc !important;
+  color: #fff !important;
+  background-color: #44d55a !important;
+  border-radius: 5px !important;
+}
+.style-card-footer input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.edit-style-button {transition: background-color 0.2s ease, border-color 0.2s ease;}
+.edit-style-button[disabled] {pointer-events: none;opacity: 0.5;}
+.jay-color-picker-wrapper .wp-picker-container {display: flex;align-items: center;}
+.jay-color-picker-wrapper .wp-picker-container .wp-color-result.button {margin-right: 6px;margin-left: 0;}
+.jay-color-picker-wrapper .wp-picker-container .iris-picker {margin-top: 10px;}
+.jay-color-picker-wrapper .jay-color-picker-input {flex-grow: 1;}
+/* =========================================
+   استایل‌های تنظیمات پنل کاربری (آکاردئونی)
+   ========================================= */
+.jay-name-sub {
+    background-color:#cafff0; 
+    border-right: 4px solid #4edbb3; 
+    transition: all 0.3s ease;
+}
+.jay-name-sub th {
+    padding-right: 35px !important; 
+    color: #555;
+    font-weight: normal;
+    position: relative;
+}
+.jay-name-sub th::before {
+    content: '↳';
+    position: absolute;
+    right: 15px;
+    top: 22px;
+    font-size: 16px;
+    color: #2271b1;
+    font-weight: bold;
+}
+/* کلاس‌های زیرمجموعه که در PHP تعریف کردیم */
+.jay-password-sub,
+.jay-profile-sub {
+    border: 1px dashed #b9b9b9;
+    transition: all 0.3s ease;
+}
+
+/* تغییر رنگ و فاصله عنوان فیلدهای زیرمجموعه */
+.jay-password-sub th,
+.jay-profile-sub th {
+    padding-right: 35px !important;
+    color: #555;
+    font-weight: normal;
+    position: relative;
+}
+
+/* اضافه کردن آیکون فلش کوچک برای زیبایی */
+.jay-password-sub th::before,
+.jay-profile-sub th::before {
+    content: '↳';
+    position: absolute;
+    right: 15px;
+    top: 22px;
+    font-size: 16px;
+    color: #2271b1;
+    font-weight: bold;
+}
+.jay-hidden-row {display: none;}
+.jay-fields-builder-container { margin-bottom: 15px; max-width:100%; }
+.jay-admin-field-row { display: flex; gap: 10px; margin-bottom: 10px; }
+.jay-admin-field-row input, .jay-admin-field-row select { flex: 1; }
+.jay-admin-options-wrapper { background: #f9f9f9; padding: 10px; border: 1px dashed #ddd; margin-top: 10px; }
+.jay-remove-field-btn { color: #a00; cursor: pointer; }
+.jay-remove-field-btn:hover { color: #dc3232; }
+
+/* =========================================
+   استایل فیلد ساز اختصاصی پنل کاربری (Jay UP)
+   ========================================= */
+.jay-login-register-up-card {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.jay-login-register-up-header {
+    background: #f9f9f9;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+}
+
+.jay-login-register-up-body {
+    padding: 15px;
+}
+.jay-login-register-add-sider-menu {
+    display: flex;flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.jay-login-register-up-row {
+    display: flex;flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.jay-login-register-up-row input, 
+.jay-login-register-up-row select {
+    flex: 1;
+}
+
+/* تنظیمات تاریخ */
+.jay-login-register-up-date-options {
+    background: #f0f6fc;
+    padding: 10px;
+    border: 1px solid #cce5ff;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+/* تنظیمات گزینه‌ها */
+.jay-login-register-up-options-wrapper {
+    background: #fbfbfb;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.jay-login-register-up-option-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.jay-login-register-up-option-row input {
+    flex: 1;
+}
+.jay-login-register-fields-builder-user-panel { margin-bottom: 15px; max-width:100%; }
+/* دکمه‌های حذف */
+.jay-login-register-up-remove-btn { color: #b32d2e; cursor: pointer; }
+.jay-login-register-up-remove-opt-btn { color: #888; cursor: pointer; }
+.jay-login-register-up-remove-opt-btn:hover { color: #b32d2e; }
+.jay-nc-sub, .jay-pass-sub {
+    background-color: #ffd5d5;
+    border-right: 4px solid #ff4e4e;
+    transition: all 0.3s ease;
+}
+.jay-nc-sub th, .jay-pass-sub th {
+    padding-right: 35px !important;
+    position: relative;
+}
+.jay-nc-sub th::before, .jay-pass-sub th::before {
+    content: '↳';
+    position: absolute;
+    right: 15px;
+    top: 22px;
+    font-size: 16px;
+    color: #2271b1;
+}
+/* استایل درگ و دراپ فیلدها */
+.jay-up-sortable-placeholder {
+    border: 2px dashed #b5b5b5;
+    background: #f0f0f1;
+    height: 50px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.jay-login-register-up-card.ui-sortable-helper {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15) !important;
+    opacity: 0.9;
+    cursor: grabbing;
+}
+
+.jay-login-register-up-header {
+    cursor: move; /* نشانگر موس برای جابجایی */
+}
+.jay-menu-logic-container {
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05) inset;
+    display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.jay-menu-logic-container p {
+    margin: 0.5em 0;
+    font-size: 13px;
+}
+.jay-menu-metas-list {
+    width: 100%;
+}
+/* استایل فیلد ساز - بخش شرطی */
+.jay-up-logic-container {
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05) inset;
+    display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  background: rgb(249, 249, 249);
+  padding: 15px;
+  margin-top: 10px;
+  border: 1px solid rgb(238, 238, 238);
+  border-radius: 4px;
+}
+.jay-up-logic-container p {
+    margin: 0.5em 0;
+    font-size: 13px;
+}
+.jay-logic-section {
+    width: 100%;
+}
+/* استایل گروپ سوییچ‌ها در تنظیمات پنل */
+.jay-setting-wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.jay-main-checkbox-label {
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+}
+
+/* کانتینر سوییچ‌های زیرمجموعه */
+.jay-inline-subs {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 5px 10px;
+    background: #f0f0f1;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px);
+}
+
+.jay-inline-subs.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+/* استایل دکمه سوییچ (iOS Style) */
+.jay-toggle-switch {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 12px;
+    color: #555;
+}
+
+.jay-toggle-switch input {opacity: 0;width: 0;height: 0;}
+.jay-toggle-slider {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 18px;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: .4s;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+.jay-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.jay-toggle-switch input:checked + .jay-toggle-slider {background-color: #2271b1;}
+.jay-toggle-switch input:checked + .jay-toggle-slider:before {transform: translateX(16px);}
+.jay-toggle-switch:hover .jay-toggle-slider {background-color: #bbb;}
+.jay-toggle-switch input:checked:hover .jay-toggle-slider {background-color: #135e96;}
+/* استایل فیلد ساز سراسری (Global Fields) - مشابه پنل کاربری */
+.jay-admin-field-item {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    overflow: hidden;
+    margin-bottom: 10px; 
+    position: relative;
+} 
+ 
+.jay-admin-field-header {
+    background: #f9f9f9;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+}
+.jay-admin-field-body {padding: 15px;}
+.jay-admin-field-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.jay-admin-field-row input, 
+.jay-admin-field-row select {
+    flex: 1;
+}
+/* استایل پلیس‌هلدر درگ و دراپ (مشترک) */
+.jay-up-sortable-placeholder {
+    border: 2px dashed #b5b5b5;
+    background: #f0f0f1;
+    height: 50px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+.jay-admin-date-options {border: 1px solid #cce5ff;}
