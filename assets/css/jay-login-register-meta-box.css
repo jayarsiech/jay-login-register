@@ -1,0 +1,37 @@
+.jay-login-register-accordion .accordion-title {
+    cursor: pointer;
+    border: 1px solid #ccd0d4;
+    background-color: #f6f7f7;
+    padding: 8px 12px;
+    margin: 0;font-family: Tahoma,Arial,sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    position: relative;
+    user-select: none;
+}
+.jay-login-register-accordion .accordion-title:hover {
+    background-color: #f0f0f1;
+}
+.jay-login-register-accordion .accordion-title::after {
+    content: '\f140'; /* Dashicon for down arrow */
+    font-family: dashicons;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.2s ease-in-out;
+}
+.jay-login-register-accordion .accordion-title.active::after {
+    transform: translateY(-50%) rotate(180deg); /* Rotate arrow up */
+}
+.jay-login-register-accordion .accordion-content {
+    display: none; /* مخفی به صورت پیش‌فرض */
+    padding: 15px;
+    border: 1px solid #ccd0d4;
+    border-top: none;
+    background-color: #fff;
+}
+.jay-login-register-accordion label {
+    display: block;
+    margin: 8px 0;
+}
