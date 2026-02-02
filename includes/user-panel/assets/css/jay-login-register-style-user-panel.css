@@ -1,0 +1,612 @@
+/* کانتینر اصلی */
+.jay-login-register-instagram-panel {
+    font-family: iransans, sans-serif !important;
+    direction: rtl;
+    width: 100%;
+    max-width: 980px;
+    margin: 50px auto;
+    background-color: #fff;
+    border: 1px solid #dbdbdb !important;
+    border-radius: 8px !important; 
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
+    display: flex;
+    min-height: 500px;
+}
+
+/* --- سایدبار (منو) --- */
+.jay-instagram-sidebar {
+    width: 260px;
+    border-left: 1px solid #dbdbdb;
+    background-color: #fff;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+.jay-login-register-instagram-panel .jay-instagram-sidebar .jay-return-item > a {
+
+    width: fit-content !important;
+    white-space: nowrap !important;
+    margin: 0 !important;
+}
+/* هدر پروفایل */
+.jay-user-meta-header {
+    padding: 30px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #fafafa;
+}
+.jay-user-meta-header img {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+}
+.jay-user-info strong {color: #262626;font-weight: 700;font-size: 1.1em;display: block;}
+.jay-user-info span {color: #8e8e8e;font-size: 0.85em;display: block;margin-top: 2px;}
+.jay-instagram-menu {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex-grow: 1;
+}
+.jay-instagram-sidebar ul li {margin:0 !important}
+.jay-menu-item {
+    padding: 18px 25px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #262626;
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+    display: flex;direction:rtl;
+    align-items: center;text-align:right !important;
+    gap: 10px;text-decoration: none;
+}
+.jay-menu-item .dashicons {font-size: 18px;color: #8e8e8e;transition: color 0.2s;}
+.jay-menu-item:hover {background-color: #fafafa;border-left-color: #dbdbdb;}
+.jay-menu-item:hover .dashicons {color: #262626;}
+.jay-menu-item.active {font-weight: bold;border-left-color: #48a68b;background-color: #fff;color: #48a68b;}
+.jay-menu-item.active .dashicons {color: #262626;}
+.jay-menu-item.jay-logout-item {border-top: 1px solid #f0f0f0;margin-top: auto;}
+.jay-menu-item.jay-logout-item a {
+    color: #ed4956 !important;
+    text-decoration: none !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+.jay-instagram-container {
+  display: flex;
+  min-height: 400px;
+  width: 100% !important;
+  text-align: right;
+  direction: rtl;
+}
+/* --- بخش محتوا --- */
+.jay-instagram-content {
+    flex-grow: 1;
+    padding:30px 40px;
+    background-color: #fff;
+    position: relative;
+    overflow-y: auto;
+}
+.jay-tab-content {display: none;animation: fadeInTab 0.4s cubic-bezier(0.16, 1, 0.3, 1);}
+.jay-tab-content.active {
+    display: block;
+    width:100%;
+    position:relative; 
+}
+
+.jay-tab-content h2 {
+    font-size: 20px;
+  margin: 0px 0px 20px 0px;
+  color: #48a68b;
+  font-family: iransans !important;
+}
+.jay-tab-content > p {color: #8e8e8e;font-size: 0.95em;margin-bottom: 30px;}
+.jay-panel-form {max-width:100%;}
+.jay-login-register-field {position:relative;}
+.jay-login-register-field label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9em;
+    color: #262626;
+}
+.jay-login-register-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    background-color: #fafafa;
+    font-size: 14px;
+    color: #262626;
+    transition: all 0.2s;
+    box-sizing: border-box;
+}
+.jay-login-register-input:focus {
+    background-color: #fff;
+    border-color: #a8a8a8;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
+}
+
+/* فیلد غیرفعال */
+.jay-login-register-input[disabled] {
+    background-color: #efefef !important;
+    color: #8e8e8e !important;
+    cursor: not-allowed;
+}
+
+/* دکمه‌ها */
+.jay-login-register-button {
+    background-color: #0095f6;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;font-family: iransans;
+    transition: background-color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+    margin-top:5px;white-space: nowrap !important;
+}
+.jay-return-item {white-space: nowrap !important;}
+.jay-login-register-button:hover {
+    background-color: #1877f2;
+}
+.jay-login-register-button:disabled {
+    background-color: #b2dffc;
+    cursor: default;
+}
+
+/* --- تایمر و ارسال مجدد --- */
+.jay-login-register-timer-wrapper {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9em;
+    background: #f8f9fa;
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+
+.jay-login-register-resend-link {
+    color: #0095f6;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.jay-login-register-resend-link:hover {
+    color: #00376b;
+}
+.jay-login-register-resend-link.disabled,
+.jay-login-register-resend-link[disabled] {
+    color: #b2dffc;
+    cursor: default;
+    pointer-events: none;
+}
+
+.jay-login-register-timer {
+    font-weight: 700;
+    color: #262626;
+    font-family: monospace;
+    font-size: 1.1em;
+}
+
+/* پیام‌ها */
+.jay-login-register-messages {
+    margin-top: 15px;
+    font-size: 0.9em;
+    border-radius: 4px;
+    padding: 0;
+    transition: all 0.3s;
+}
+.jay-login-register-messages.error {
+    color: #ed4956;
+    padding: 10px;
+    background: #fff0f1;
+    border: 1px solid #fbdce0;
+}
+.jay-login-register-messages.success {
+    color: #0095f6;
+    padding: 10px;
+    background: #f0f8ff;
+    border: 1px solid #dcecfb;
+}
+
+/* فیلد کد تایید چندگانه در پنل */
+.jay-otp-fields-container {
+    display: flex;
+    gap: 8px;
+    direction: ltr;
+    margin-bottom: 20px;
+    justify-content: center !important;
+}
+.jay-otp-digit-input {
+    width: 40px;
+    height: 45px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    background: #fff;
+}
+.jay-otp-digit-input:focus {
+    border-color: #0095f6;
+    box-shadow: 0 0 0 2px rgba(0, 149, 246, 0.2);
+}
+
+/* انیمیشن */
+@keyframes fadeInTab {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ریسپانسیو */
+/* =========================================
+   ریسپانسیو (موبایل و تبلت) - اصلاح شده
+   ========================================= */
+@media (max-width: 768px) {
+    /* 1. تنظیم کانتینر اصلی برای جریان عمودی */
+    .jay-login-register-instagram-panel {
+        flex-direction: column !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+    }
+    .jay-instagram-container {
+        flex-direction: column !important;
+        display: flex !important;
+        height: auto !important;
+    }
+    /* 2. سایدبار و منو */
+    .jay-instagram-sidebar {
+        width: 100% !important;
+        border-left: none !important;
+        border-bottom: 1px solid #dbdbdb;
+        flex-shrink: 0 !important;
+        background: #fff;
+        position: sticky;
+        top: 0;
+        z-index: 3;text-aligne:right
+    }
+
+    .jay-user-meta-header {
+        padding: 15px !important;
+        flex-direction: row !important;
+        text-align: right !important;
+        justify-content: flex-start !important;
+    }
+    .jay-user-meta-header img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 0 !important;
+        margin-left: 15px !important;
+    }
+    .jay-user-info {
+        align-items: flex-start !important;
+    }
+    /* منوی افقی اسکرول‌خور */
+    .jay-instagram-menu {
+        display: flex !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        -webkit-overflow-scrolling: touch;
+        background: #fff;
+        scrollbar-width: none;
+    }
+    /* مخفی کردن اسکرول بار در کروم */
+    .jay-instagram-menu::-webkit-scrollbar {
+        display: none;
+    }
+
+    .jay-menu-item {
+        border-left: none !important;
+        border-bottom: 2px solid transparent;
+        padding: 15px !important;
+        font-size: 13px !important;
+        flex: 0 0 auto; /* جلوگیری از فشرده شدن آیتم‌ها */
+    }
+
+    .jay-menu-item.active {
+        border-left: none !important;
+        border-bottom-color: #48a68b !important;
+        background-color: transparent !important;
+    }
+    /* مخفی کردن آیتم خروج در منوی افقی (چون جا می‌گیرد) یا تغییر استایل */
+    .jay-menu-item.jay-logout-item {
+        border-top: none !important;
+        margin-top: 0 !important;
+        border-right: 1px solid #eee;
+    }
+
+    /* 3. بخش محتوا */
+    .jay-instagram-content {
+        padding: 20px 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        overflow: visible !important;
+        height: auto !important;
+        flex-grow: 1 !important;
+        display: block !important;
+    }
+
+    /* فرم‌ها در موبایل */
+    .jay-panel-form {
+        max-width: 100% !important;
+    }
+    
+    /* اطمینان از نمایش تب فعال */
+    .jay-tab-content.active {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+}
+
+/* وضعیت بررسی زنده (زیر فیلد پسورد قدیمی) */
+.jay-field-status {
+    font-size: 12px;
+    margin-top: 5px;
+    min-height: 18px;
+    transition: all 0.3s;
+}
+.jay-field-status.loading { color: #666; }
+.jay-field-status.success { color: #28a745; }
+.jay-field-status.error { color: #dc3545; }
+
+/* نوار قدرت رمز عبور */
+.jay-password-strength-meter {
+    height: 4px;
+    background: #e0e0e0;
+    border-radius: 2px;
+    margin-top: 8px;
+    overflow: hidden;
+    width: 100%;
+    display: none;
+}
+.jay-strength-bar {
+    height: 100%;
+    width: 0;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+.jay-strength-text {
+    display: block;
+    font-size: 11px;
+    margin-top: 4px;
+    text-align: right;
+}
+#jay-password-match-status {
+    display: block;
+    font-size: 11px;
+    margin-top: 4px;
+    min-height: 15px;
+}
+.jay-radio-group, 
+.jay-checkbox-group {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+}
+.jay-radio-group label, 
+.jay-checkbox-group label {
+    font-size: 14px;
+    color: #444;
+    transition: all 0.2s;
+}
+
+.jay-radio-group label:hover, 
+.jay-checkbox-group label:hover {
+    color: #000;
+}
+.jay-radio-group input, 
+.jay-checkbox-group input {
+    margin-left: 10px !important; 
+    width: auto !important;
+}
+.jay-login-register-custom-field-wrapper {margin:0px auto 20px auto}
+.jay-user-avatar-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.jay-avatar-container {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.jay-avatar-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.jay-avatar-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+.jay-avatar-container:hover .jay-avatar-overlay {opacity: 1;}
+.jay-avatar-overlay .dashicons {
+    color: #fff;
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+}
+.jay-avatar-spinner { 
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #fff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: jay-spin 1s linear infinite;
+    z-index: 2;
+}
+
+.jay-avatar-container.loading .jay-avatar-overlay {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+@keyframes jay-spin {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+/* =========================================
+   فیکس مشکل نمایش سلکت باکس در RTL و زوم
+   ========================================= */
+.jay-login-register-input {
+    width: 100% !important; 
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+select.jay-login-register-input {
+    width: 100% !important;
+    min-width: 0 !important;
+    text-indent: 0 !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    direction: rtl !important;
+    text-align: right !important;
+    padding-right: 10px !important;
+    padding-left: 30px !important;
+}
+
+/* استایل کانتینر برای جلوگیری از سرریز */
+.jay-login-register-field {
+    width: 100%;
+    max-width: 100%;
+}
+/* استایل لینک بازگشت مستقل */
+.jay-return-item-standalone {
+    text-decoration: none !important;
+    display: flex !important;
+    align-items: center;
+    padding: 18px 25px;
+    font-size: 14px;
+    color: #262626 !important;
+    background-color: #fff;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.jay-return-item-standalone:hover {
+    background-color: #fafafa;
+    color: #48a68b !important;
+}
+
+.jay-return-item-standalone .dashicons {
+    color: #8e8e8e;
+    font-size: 18px;
+    transition: color 0.2s;
+}
+
+.jay-return-item-standalone:hover .dashicons {
+    color: #48a68b;
+}
+
+/* اصلاح منو برای چسبیدن به لینک بالا */
+.jay-instagram-menu {
+    border-top: none !important;
+}
+/* استایل فیلد پاراگراف (Textarea) */
+textarea.jay-login-register-input.jay-login-register-textarea {
+    height: auto !important;
+    min-height: 120px;
+    line-height: 1.6;
+    padding: 12px;
+    resize: vertical;
+    white-space: pre-wrap;
+    overflow-y: auto;font-family: iransans;
+}
+textarea.jay-login-register-textarea {
+    white-space: pre-wrap;
+    line-height: 1.6;
+    min-height: 120px;
+    resize: vertical;
+}
+.jay-menu-item .dashicons {
+    margin-left: 8px;
+    vertical-align: middle;
+}
+/* لینک‌های سفارشی که داخل تگ a هستند */
+.jay-custom-link-item {
+    text-decoration: none !important;
+    display: flex !important;
+    align-items: center;
+    color: #262626 !important;
+}
+.jay-custom-link-item:hover {
+    color: #48a68b !important;
+}
+.jay-custom-link-item:hover .dashicons {
+    color: #48a68b;
+}
+.jay-user-info .jay-membership-badge {
+    display: block;
+    font-size: 11px;
+    color: #888;
+    margin:4px auto auto auto;
+    background: rgba(0,0,0,0.03);
+    padding: 2px 8px;
+    border-radius: 10px;
+    width: fit-content;
+}
+/* 4. فیکس کردن بج تاریخ عضویت (کشیدگی و پدینگ) */
+html body .jay-login-register-instagram-panel .jay-user-info .jay-membership-badge {
+    /* تبدیل به اینلاین بلاک برای جلوگیری از عرض ۱۰۰٪ */
+    display: inline-flex !important; 
+    align-items: center !important;
+    justify-content: center !important;
+    
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: max-content !important; /* فقط به اندازه متن جا بگیرد */
+    
+    /* تنظیم فواصل */
+    margin: 8px auto 0 auto !important; /* وسط‌چین در کانتینر خودش */
+    padding: 4px 12px !important;
+    
+    /* ریست فونت و ارتفاع خط */
+    line-height: normal !important;
+    height: auto !important;
+    white-space: nowrap !important; /* جلوگیری از شکستن متن */
+}
