@@ -1,0 +1,990 @@
+/*
+ * ===================================================
+ * JAY Relog - Professional Form Style
+ * Version: 2.0
+ * Features: Glassmorphism, Animations, Icons, Responsive
+ * ===================================================
+ */
+
+/* --- متغیرهای اصلی و پس‌زمینه صفحه --- */
+:root {
+    --bg-gradient-start: #6a11cb;
+    --bg-gradient-end: #2575fc;
+    --form-bg-color: rgba(255, 255, 255, 0.1);
+    --form-border-color: rgba(255, 255, 255, 0.2);
+    --form-shadow-color: rgba(0, 0, 0, 0.1);
+    --text-color: #fff;
+    --input-bg: rgba(0, 0, 0, 0.2);
+    --input-border: #888;
+    --input-focus-border: #00aaff;
+    --button-bg: linear-gradient(90deg, #0073aa, #00c6ff);
+    --button-hover-bg: linear-gradient(90deg, #00c6ff, #0073aa);
+    --button-secondary-bg: rgba(255, 255, 255, 0.15);
+    --button-secondary-hover-bg: rgba(255, 255, 255, 0.25);
+    --success-color: #28a745;
+    --error-color: #dc3545;
+     --accent-color: #64ffda;
+    --jay-input-text-color: #fff;
+    --jay-icon-color: #fff;
+
+}
+pre {
+    padding:0px !important;
+}
+@font-face{font-family:iransans;font-weight:700;font-style:normal;
+    src:url(../font/IRANSansWeb_Bold.eot);
+    src:url(../font/IRANSansWeb_Bold.eot?#iefix) format("embedded-opentype"),
+    url(../font/IRANSansWeb_Bold.woff2) format("woff2"),
+    url(../font/IRANSansWeb_Bold.woff) format("woff"),
+    url(../font/IRANSansWeb_Bold.ttf) format("truetype")}
+    @font-face{font-family:IRANSans;font-weight:500;font-style:normal;src:url(../font/IRANSansWeb_Medium.eot);
+    src:url(../font/IRANSansWeb_Medium.eot?#iefix) 
+    format("embedded-opentype"),
+    url(../font/IRANSansWeb_Medium.woff2) format("woff2"),
+    url(../font/IRANSansWeb_Medium.woff) format("woff"),
+    url(../font/IRANSansWeb_Medium.ttf) format("truetype")}
+    @font-face{font-family:iransans;font-weight:300;font-style:normal;src:url(../font/IRANSansWeb_Light.eot);
+    src:url(../font/IRANSansWeb_Light.eot?#iefix) 
+    format("embedded-opentype"),
+    url(../font/IRANSansWeb_Light.woff2) format("woff2"),
+    url(../font/IRANSansWeb_Light.woff) format("woff"),
+    url(../font/IRANSansWeb_Light.ttf) format("truetype")}
+    @font-face{font-family:iransans;font-weight:400;font-style:normal;src:url(../font/IRANSansWeb.eot);
+    src:url(../font/IRANSansWeb.eot?#iefix) format("embedded-opentype"),
+    url(../font/IRANSansWeb.woff)format("woff"),
+    url(../font/IRANSansWeb.ttf) format("truetype")}
+    @font-face {
+        font-family: 'IRANS';
+        src: url('../font/IRANSans-Light-web.woff') format('woff');
+        font-weight: normal;
+    }
+    
+    
+    @font-face {
+        font-family: 'IRANS';
+        src: url('../font/IRANSans-web.woff') format('woff');
+        font-weight: bold;
+    }
+body {
+  color: #1d2928;
+  direction: rtl;
+  font-family:iransans;
+  background-color: #f0f4f5;
+  margin: 0;
+  padding: 0;
+}
+/* استایل برای مخفی‌سازی فیلد تله کپچای Honeypot */
+.jay-login-register-honeypot-field {
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); 
+    clip: rect(1px, 1px, 1px, 1px);
+}
+.jay-login-register-captcha-field {
+    margin-top: 1rem;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.jay-login-register-captcha-field label {
+    display: block;font-family: iransans;
+    margin-bottom: 0.5rem;direction:ltr;text-align:left;
+    font-weight: bold;
+    color: var(--text-color) !important;
+    font-size: 0.9em;
+}
+
+.jay-login-register-loggedin-container {
+    text-align: center;
+    max-width: 420px;
+  margin: 60px auto;
+  background: var(--form-bg-color) !important;
+  border-radius: 24px;
+  border: 1px solid var(--form-border-color) !important;
+  box-shadow: 0 8px 32px 0 var(--form-shadow-color) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 2.5rem;
+  position: relative;
+  z-index: 10;
+  animation: fadeInForm 1s ease-out forwards;
+  overflow: hidden;
+}
+
+.jay-login-register-loggedin-container h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color:#606060;
+}
+
+.jay-login-register-loggedin-container p {
+    color:#717171;
+    font-size: 1em;
+    margin-bottom: 25px;
+}
+
+.jay-login-register-redirect-timer {
+    font-size: 0.9em;
+    opacity: 0.8;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+#jay-login-register-countdown {
+    font-weight: bold;
+    color:#d72626;
+}
+.jay-login-register-resend-link-login {
+    display: block;
+    text-align: center;
+    font-size: 0.9em;
+    color:#c42727;
+    opacity: 0.8;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+.jay-login-register-resend-link-login:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.jay-login-register-button-login {
+    width: 100%;
+    padding: 15px;
+    font-family: iransans !important;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.jay-login-register-button-login {
+    background: var(--button-bg) !important;text-decoration:none;
+    background-size: 200% 100%;
+    font-family: iransans !important;
+}
+.jay-login-register-button-login:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.jay-login-register-button-login:hover {
+    background-position: 100% 0;
+}
+
+.jay-login-register-button-login:disabled {
+    background: #555 !important;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* استایل برای تایمر مسدودیت */
+.jay-login-register-lockout-message {
+    margin-top: 10px;
+    font-weight: normal;
+}
+.jay-login-register-lockout-timer {
+    direction: ltr;
+    display: inline-block;
+    font-weight: bold;
+    color:#e67171;
+    background-color: rgba(0,0,0,0.2);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 1.1em;
+}
+.jay-login-register-switcher {
+    display: block;
+    text-align: center;
+    font-size: 0.9em;
+    color: var(--form-switcher-color, #fff) !important;
+    opacity: 0.8;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+.jay-login-register-switcher:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+.yekshomaredigar {
+    display:flex;margin-top: 10px;
+    justify-content:center;
+}
+.yekshomaredigar a {
+color: #fff;
+  border-radius: 5px;
+  background-color: rgba(57, 255, 1, 0.5);
+  padding: 10px;}
+
+/* استایل لینک بررسی مجدد */
+.jay-login-register-resend-link {
+    display: block;
+    text-align: center;
+    font-size: 0.9em;
+    color:#000;
+    opacity: 0.8;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+.jay-login-register-resend-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+.jay-login-register-step-container h3 {
+    color:#fff !important;
+    font-family:iransans !important;
+    font-weight:bold !important;
+}
+/* --- کانتینر اصلی فرم (افکت شیشه‌ای) --- */
+/*.jay-login-register-container {*/
+/*    max-width: 420px;*/
+/*    margin: 60px auto;*/
+/*    background: var(--form-bg-color);*/
+/*    border-radius: 20px;*/
+/*    border: 1px solid var(--form-border-color);*/
+/*    box-shadow: 0 8px 32px 0 var(--form-shadow-color);*/
+/*    backdrop-filter: blur(12px);*/
+/*    -webkit-backdrop-filter: blur(12px);*/
+/*    padding: 2rem; font-family:iransans;*/
+/*    direction: rtl;color:#fff;*/
+/*    animation: fadeInForm 0.8s ease-out forwards;*/
+/*}*/
+
+
+.jay-login-register-container {
+    max-width: 480px;
+    margin: 60px auto;
+    background: var(--form-container-bg, rgba(255, 255, 255, 0.1)) !important;
+    border-radius: var(--form-border-radius, 24px) !important;
+    border: var(--form-border, 1px solid rgba(255, 255, 255, 0.2)) !important;
+    box-shadow: var(--form-box-shadow, 0 8px 32px 0 rgba(0, 0, 0, 0.1)) !important;
+    backdrop-filter: blur(var(--form-backdrop-blur, 20px));
+    -webkit-backdrop-filter: blur(var(--form-backdrop-blur, 20px));
+    padding: 2.5rem;
+    position: relative;
+    z-index: 10;
+    animation: fadeInForm 1s ease-out forwards;
+    overflow: hidden;
+}
+
+.jay-login-register-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent) !important;
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+
+ 
+
+/* --- بک گراند متحرک --- */
+.page-template-default, body.jay-relog-template-active {
+    background: var(--page-bg, linear-gradient(135deg, #667eea, #764ba2, #f093fb)) !important;
+    background-size: 400% 400%;
+    animation: gradientShift 25s ease infinite;
+    font-family: iransans !important;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --- آیکون های شناور پس زمینه --- */
+.floating-icons {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.floating-icon {
+    position: absolute;
+    opacity: 0.1;
+    animation: float 20s infinite linear;
+}
+
+.floating-icon:nth-child(1) {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+    font-size: 2rem;
+}
+
+.floating-icon:nth-child(2) {
+    top: 20%;
+    right: 15%;
+    animation-delay: -5s;
+    font-size: 1.5rem;
+}
+
+.floating-icon:nth-child(3) {
+    top: 50%;
+    left: 5%;
+    animation-delay: -10s;
+    font-size: 2.5rem;
+}
+
+.floating-icon:nth-child(4) {
+    top: 70%;
+    right: 10%;
+    animation-delay: -15s;
+    font-size: 1.8rem;
+}
+
+.floating-icon:nth-child(5) {
+    top: 30%;
+    left: 70%;
+    animation-delay: -7s;
+    font-size: 2rem;
+}
+
+.floating-icon:nth-child(6) {
+    top: 80%;
+    left: 30%;
+    animation-delay: -12s;
+    font-size: 1.6rem;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-20px) rotate(90deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(180deg);
+    }
+    75% {
+        transform: translateY(-30px) rotate(270deg);
+    }
+}
+
+/* --- افکت پارالاکس با موس --- */
+@media (max-width: 480px) {
+    .floating-icon {
+        font-size: 1.2rem !important;
+    }
+}
+
+
+/* --- انیمیشن ورود فرم --- */
+@keyframes fadeInForm {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- لوگو، عناوین و پاراگراف‌ها --- */
+.jay-login-register-logo-wrapper {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.jay-login-register-logo-wrapper img {
+    max-width: 120px;
+    height: auto;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+}
+#jay-login-register-step-container h2, 
+#jay-login-register-step-container h3 {
+    color: var(--form-h-color, #fff) !important;
+    font-family:iransans !important;
+}
+.jay-login-register-step h2, .jay-login-register-step h3 {
+    text-align: center;
+    color: var(--form-h-color, #fff) !important;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-family:iransans !important;
+}
+#jay-login-register-step-container p {
+    color: var(--form-p-color, #fff) !important;
+    font-family:iransans !important;
+    font-size: 14px !important;
+}
+.jay-login-register-step p {
+    text-align: center;
+    color: var(--form-p-color, #fff) !important;
+    font-size: 0.95em;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    font-family:iransans !important;
+}
+
+/* --- فیلدهای ورودی (Input) با آیکون --- */
+.jay-login-register-field {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+.jay-login-register-toggle-label {
+    display: block;font-family: iransans !important;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #000 !important;
+    font-size: 0.9em;
+}
+.jay-login-register-field label {
+    display: block;font-family: iransans !important;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--form-label-color, #fff) !important;
+    font-size: 0.9em;
+} 
+.jay-login-register-input {
+    width: 100%;
+    font-family: iransans !important;
+    padding: 14px 14px 14px 45px !important; 
+    background: var(--form-input-bg, rgba(0, 0, 0, 0.2));
+    border: 1px solid var(--form-input-border, #888) !important;
+    border-radius: 8px;
+    color: var(--form-input-text, #fff) !important;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    text-align: left;
+    direction: ltr;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    background-size: 20px;
+}
+.jay-login-register-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+.jay-login-register-input:focus {
+    outline: none;
+    border-color: var(--input-focus-border) !important;
+    box-shadow: 0 0 0 3px rgba(0, 170, 255, 0.3);
+}
+
+/* آیکون‌ها برای فیلدهای مختلف (SVG Data URI) */
+/* --- Icons for the main input field --- */
+.jay-input-icon-phone {
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='white'%3E%3Cpath d='M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z'/%3E%3C/svg%3E");
+    
+}
+
+.jay-input-icon-email {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z'/%3E%3C/svg%3E");
+}
+
+.jay-input-icon-user {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E");
+}
+input[name="jay_login_register_national_code"] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E");
+}
+input[name="jay_login_register_passport"] {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3s-3 1.34-3 3c0 .35.07.69.18 1H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-5-1c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 13.5c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm6.6 6H2.4c-.22 0-.4-.18-.4-.4V9.4c.22-.71.78-1.4 1.4-1.4h15.2c.62 0 1.18.69 1.4 1.4v9.7c0 .22-.18.4-.4.4z'/%3E%3C/svg%3E");
+ }
+input[name="jay_login_register_otp"], input[name="jay_login_register_otp_login"] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm6 2a2 2 0 0 0-2-2h-8a2 2 0 0 0-2 2v4h12z'/%3E%3C/svg%3E");
+}
+input[name="jay_login_register_password"] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2z'/%3E%3C/svg%3E");
+}
+
+/* --- استایل دکمه‌ها --- */
+.jay-login-register-button,
+.jay-login-register-button-secondary {
+    width: 100%;
+    padding: 15px;font-family: iransans;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.jay-login-register-button {
+    background: var(--button-primary-bg, linear-gradient(90deg, #0073aa, #00c6ff)) !important;
+    color: var(--button-primary-text, #fff) !important;
+    background-size: 200% 100%;font-family: iransans;
+}
+
+.jay-login-register-button-secondary {
+    background: var(--button-secondary-bg, rgba(255, 255, 255, 0.15)) !important;
+    color: var(--button-secondary-text, #fff) !important;
+    font-family: iransans;
+    border: 1px solid var(--form-border-color) !important;
+    margin-top: 0.75rem; 
+}
+
+/* افکت هاور برای هر دو دکمه */
+.jay-login-register-button:hover,
+.jay-login-register-button-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.jay-login-register-button:hover {
+    background-position: 100% 0;
+}
+
+.jay-login-register-button-secondary:hover {
+    background: var(--button-secondary-hover-bg) !important;
+}
+
+.jay-login-register-button:disabled,
+.jay-login-register-button-secondary:disabled {
+    background: #555 !important;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* --- پیغام‌های خطا و موفقیت --- */
+.jay-login-register-messages {
+    padding: 12px 15px;
+    margin-top: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;font-family: iransans;
+    display: none;
+    color: #fff;
+}
+.jay-login-register-messages:not(:empty){
+    display: block;
+    animation: fadeInForm 0.5s ease;
+}
+.jay-login-register-messages.error {
+    text-align: right;
+    direction: rtl;
+    line-height: 30px;
+    background-color: var(--form-error-bg, rgba(220, 53, 69, 0.5)) !important;
+    color: var(--form-error-text-color, #fff) !important;
+    font-family: iransans;
+    border: 1px solid var(--form-error-border-color, rgba(220, 53, 69, 0.8)) !important;
+}
+.jay-login-register-messages.success {
+    background-color: rgba(40, 167, 69, 0.5);font-family: iransans;
+    border: 1px solid rgba(40, 167, 69, 0.8);
+}
+
+.jay-spinner{display:inline-block;width:1em;height:1em;border:2px solid transparent;border-top-color:currentColor;border-radius:50%;animation:spin .6s linear infinite;margin-left:8px;vertical-align:middle}
+@keyframes spin{to{transform:rotate(360deg)}}  
+.jay-login-register-switcher { display: block; text-align: center; margin-top: 10px; font-size: 0.9em; cursor: pointer; }
+
+/* --- واکنش‌گرایی برای موبایل --- */
+@media (max-width: 480px) {
+    .jay-login-register-container {
+        margin: 20px 15px;
+        padding: 1.5rem;
+    }
+}
+/* استایل برای تایمر و لینک ارسال مجدد */
+.jay-login-register-timer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+.jay-login-register-timer {
+    direction: ltr;
+    font-weight: bold;
+    color: var(--accent-color) !important;
+}
+.jay-login-register-resend-link[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    text-decoration: none;
+}
+/* --- استایل دکمه‌های ورود اجتماعی --- */
+.jay-login-register-social-divider {
+  text-align: center;
+  margin: 1.5rem 0;
+  color: var(--text-color) !important;
+ opacity: 0.8;
+  position: relative;
+}
+.jay-login-register-social-divider::before,
+.jay-login-register-social-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background-color: var(--form-border-color) !important;
+}
+.jay-login-register-social-divider::before {
+  right: 0;
+}
+.jay-login-register-social-divider::after {
+ left: 0;
+}
+
+.jay-login-register-button-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1em;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.jay-login-register-button-social.google {
+  background-color: #fff;
+  color: #444;
+  border: 1px solid #ddd;
+}
+.jay-login-register-button-social:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.jay-login-register-button-social .social-icon {
+   width: 20px;
+   height: 20px;
+  margin-left: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.jay-login-register-button-social.google .social-icon {
+  background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' xmlns:xlink='http://www.w3.org/1999/xlink' style='display: block;'%3E%3Cpath fill='%23EA4335' d='M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z'%3E%3C/path%3E%3Cpath fill='%234285F4' d='M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z'%3E%3C/path%3E%3Cpath fill='%23FBBC05' d='M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z'%3E%3C/path%3E%3Cpath fill='%2334A853' d='M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z'%3E%3C/path%3E%3Cpath fill='none' d='M0 0h48v48H0z'%3E%3C/path%3E%3C/svg%3E");
+}
+/* --- استایل جدید برای فیلدهای چندگانه OTP --- */
+.jay-otp-fields-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    direction: ltr; /* مهم برای نمایش صحیح از چپ به راست */
+    margin-bottom: 1.5rem;
+}
+
+.jay-otp-digit-input {
+    width: 45px;
+    height: 55px;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    background: var(--form-input-bg, rgba(0, 0, 0, 0.2)) !important;
+    border: 1px solid var(--form-input-border, #888) !important;
+    border-radius: 8px !important;
+    color: var(--form-input-text, #fff) !important;
+    transition: all 0.3s ease;
+    caret-color: var(--input-focus-border, #00aaff) !important;
+}
+
+.jay-otp-digit-input::-webkit-outer-spin-button,
+.jay-otp-digit-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.jay-otp-digit-input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.jay-otp-digit-input:focus {
+    outline: none;
+    border-color: var(--input-focus-border, #00aaff) !important;
+    box-shadow: 0 0 0 3px rgba(0, 170, 255, 0.4);
+    transform: scale(1.05);
+}
+
+.jay-otp-digit-input:valid {
+    border-color: var(--success-color, #28a745) !important;
+}
+/* --- جدید: استایل برای توضیح دکمه بله --- */
+.jay-login-register-bale-notice {
+    font-size: 0.66em !important;
+    text-align: center !important;
+    opacity: 0.8 !important;
+    margin-top: 15px !important;
+    margin-bottom: 0 !important;
+    font-family:iransans !important;
+    color: var(--form-p-color, #fff) !important;
+}
+/* --- جدید: استایل برای دکمه ارسال با بله --- */
+.jay-login-register-button-bale {
+    background: #fff !important;
+    color: #00b894 !important;
+    border: 1px solid #00b894 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px !important;
+}
+
+.jay-login-register-button-bale:hover {
+    background: #f5fffd !important;
+    border-color: #00a182 !important;
+    color: #00a182 !important;
+}
+
+/* --- جدید: استایل برای آیکون دکمه بله --- */
+/* --- جدید: استایل برای آیکون دکمه بله --- */
+.jay-login-register-button-bale .social-icon {
+    background-image: url('../images/bale-icon.png');
+    background-size: 20px 20px; 
+    background-repeat: no-repeat;
+    background-position: center left 10px;
+    width:30px; 
+    height:30px;
+    margin-right: 10px; 
+}
+
+/* استایل وضعیت نام کاربری */
+.jay-username-status {
+    transition: all 0.3s ease;
+    font-weight: bold;
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+}
+/* تغییر جهت فیلد نام کاربری به چپ برای تایپ انگلیسی */
+#jay_login_register_custom_username {
+    direction: ltr;
+    text-align: left;
+    font-family: sans-serif; /* فونت انگلیسی ساده */
+}
+
+/* =========================================
+   استایل‌های فیلدهای سفارشی (رادیو و چک‌باکس)
+   ========================================= */
+
+/* تنظیم فاصله و چیدمان کانتینر گزینه‌ها */
+.jay-radio-group,
+.jay-checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* فاصله بین گزینه‌ها */
+    margin-top: 8px;
+    padding: 5px 0;
+}
+
+/* اصلاح استایل لیبل هر گزینه */
+.jay-radio-group label,
+.jay-checkbox-group label {
+    display: flex !important; 
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.95em;
+    color: var(--text-color, #fff) !important; 
+    margin: 0 !important; 
+    transition: opacity 0.2s;
+}
+
+.jay-radio-group label:hover,
+.jay-checkbox-group label:hover {
+    opacity: 0.8;
+}
+
+/* --- مخفی کردن استایل پیش‌فرض مرورگر و ساخت استایل پایه --- */
+.jay-radio-group input[type="radio"],
+.jay-checkbox-group input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: rgba(255, 255, 255, 0.15); /* پس‌زمینه شیشه‌ای */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    margin-left: 8px; /* فاصله با متن (چون RTL است) */
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    transition: all 0.2s ease-in-out;
+    vertical-align: middle;
+}
+
+/* --- استایل اختصاصی رادیو باتن (گرد) --- */
+.jay-radio-group input[type="radio"] {
+    border-radius: 50%;
+}
+
+/* حالت انتخاب شده رادیو */
+.jay-radio-group input[type="radio"]:checked {
+    background-color: var(--button-bg, #0073aa) !important; 
+    border-color: var(--button-bg, #0073aa) !important;
+}
+
+/* نقطه وسط رادیو */
+.jay-radio-group input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+
+/* --- استایل اختصاصی چک‌باکس (مربعی با گوشه گرد) --- */
+.jay-checkbox-group input[type="checkbox"] {
+    border-radius: 4px;
+}
+
+/* حالت انتخاب شده چک‌باکس */
+.jay-checkbox-group input[type="checkbox"]:checked {
+    background-color: var(--button-bg, #0073aa) !important;
+    border-color: var(--button-bg, #0073aa) !important;
+}
+
+/* تیک (Checkmark) داخل چک‌باکس */
+.jay-checkbox-group input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* --- افکت فوکوس برای دسترس‌پذیری --- */
+.jay-radio-group input:focus,
+.jay-checkbox-group input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+    border-color: #fff;
+}
+
+/* --- استایل فیلد Select (لیست بازشو) --- */
+/* اضافه کردن این بخش برای هماهنگی کامل فرم */
+.jay-custom-field-wrapper select {
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: left 15px center; /* سمت چپ چون RTL است */
+    background-size: 10px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-left: 30px !important; /* جا برای آیکون */
+}
+
+/* تغییر رنگ آپشن‌های سلکت (چون پس‌زمینه آپشن‌ها معمولا سفید است) */
+.jay-custom-field-wrapper select option {
+    background-color: #fff;
+    color: #333;
+}
+
+/* ==========================================================
+   CSS Isolation & Theme Conflict Fixes
+   جلوگیری از تداخل قالب و المنتور با فرم
+   ========================================================== */
+
+/* 1. تنظیم مدل جعبه‌ای (حیاتی برای جلوگیری از بیرون‌زدگی) */
+#jay-login-register-container,
+#jay-login-register-container *,
+.jay-inline-lock-form-wrapper,
+.jay-inline-lock-form-wrapper * {
+    box-sizing: border-box !important;
+}
+
+/* 2. حذف فاصله‌های اضافه (White Spacing) که قالب‌ها می‌دهند */
+#jay-login-register-container h3,
+#jay-login-register-container p,
+#jay-login-register-container label,
+.jay-inline-lock-form-wrapper h4,
+.jay-inline-lock-form-wrapper p {
+    margin-top: 0 !important;
+    line-height: 1.5 !important; 
+}
+
+/* تنظیم فاصله پایین دقیق برای پاراگراف‌ها */
+#jay-login-register-container p {
+    margin-bottom: 15px !important;
+}
+
+/* 3. اصلاح استایل اینپوت‌ها در برابر قالب‌های سرکش */
+#jay-login-register-container input[type="text"],
+#jay-login-register-container input[type="password"],
+#jay-login-register-container input[type="email"],
+#jay-login-register-container input[type="tel"],
+#jay-login-register-container input[type="number"],
+.jay-inline-lock-form-wrapper input:not([type="checkbox"]):not([type="radio"]) {
+    margin: 0 !important; 
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 45px !important;
+    background-color: var(--form-input-bg, rgba(0, 0, 0, 0.2)) !important; 
+    box-shadow: none !important; 
+    outline: none !important;
+    color: var(--jay-input-text-color) !important;
+}
+#jay-login-register-container input::placeholder {
+    color: var(--jay-input-text-color) !important;
+    opacity: 0.7;
+}
+
+/* 4. اصلاح دکمه‌ها (بعضی قالب‌ها پدینگ عجیب می‌دهند) */
+#jay-login-register-container button,
+.jay-inline-lock-form-wrapper button {
+    margin: 10px 0 0 0 !important;
+    line-height: normal !important;
+}
+
+/* 5. حذف لیست استایل‌ها اگر از ul/li استفاده شده باشد (احتیاط) */
+#jay-login-register-container ul,
+#jay-login-register-container li {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* 6. رفع مشکل لینک‌ها (رنگ و خط زیرین) */
+#jay-login-register-container a,
+.jay-inline-lock-form-wrapper a {
+    box-shadow: none !important;
+    border: none !important;
+    text-decoration: none !important;
+}
+
+/* 7. فیکس مخصوص المنتور (Elementor) */
+.jay-login-register-logo-wrapper img {
+    margin-bottom: 15px !important;
+    display: inline-block !important;
+    width: auto !important; 
+    max-width: 150px !important;
+}
