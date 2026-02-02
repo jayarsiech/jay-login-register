@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'iransans';
+    font-weight: 700;
+    font-style: normal;
+    src: url('../font/IRANSansWeb_Bold.eot');
+    src: url('../font/IRANSansWeb_Bold.eot?#iefix') format("embedded-opentype"),
+         url('../font/IRANSansWeb_Bold.woff2') format("woff2"),
+         url('../font/IRANSansWeb_Bold.woff') format("woff"),
+         url('../font/IRANSansWeb_Bold.ttf') format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'iransans';
+    font-weight: 500;
+    font-style: normal;
+    src: url('../font/IRANSansWeb_Medium.eot');
+    src: url('../font/IRANSansWeb_Medium.eot?#iefix') format("embedded-opentype"),
+         url('../font/IRANSansWeb_Medium.woff2') format("woff2"),
+         url('../font/IRANSansWeb_Medium.woff') format("woff"),
+         url('../font/IRANSansWeb_Medium.ttf') format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'iransans';
+    font-weight: 300;
+    font-style: normal;
+    src: url('../font/IRANSansWeb_Light.eot');
+    src: url('../font/IRANSansWeb_Light.eot?#iefix') format("embedded-opentype"),
+         url('../font/IRANSansWeb_Light.woff2') format("woff2"),
+         url('../font/IRANSansWeb_Light.woff') format("woff"),
+         url('../font/IRANSansWeb_Light.ttf') format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'iransans';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../font/IRANSansWeb.eot');
+    src: url('../font/IRANSansWeb.eot?#iefix') format("embedded-opentype"),
+         url('../font/IRANSansWeb.woff2') format("woff2"),
+         url('../font/IRANSansWeb.woff') format("woff"),
+         url('../font/IRANSansWeb.ttf') format("truetype");
+    font-display: swap;
+}
+
+/* اعمال فونت به تمام عناصر افزونه */
+.jay-login-register-container,
+.jay-login-register-user-panel,
+.jay-content-lock-wrapper,
+.jay-inline-lock-form-wrapper,
+.jay-login-register-instagram-panel,
+body.jay-relog-template-active {
+    font-family: 'iransans', Tahoma, Arial, sans-serif !important;
+}
