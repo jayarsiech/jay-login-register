@@ -1,0 +1,245 @@
+/* استایل‌های ویجت پیشخوان JAY Relog */
+.jay-relog-dashboard-widget {
+    margin: -12px;
+    direction: rtl;
+}
+
+/* --- (جدید) کانتینر اسلایدر Keen --- */
+.jay-relog-dashboard-widget .navigation-wrapper {
+    position: relative;
+    background-color: #f0f0f1;
+}
+
+/* (جدید) اسلایدر اصلی Keen */
+.jay-relog-dashboard-widget .keen-slider {
+    cursor: grab;
+    overflow: hidden;
+}
+.jay-relog-dashboard-widget .keen-slider.is-dragging {
+    cursor: grabbing;
+}
+
+/* (جدید) هر اسلاید Keen */
+.jay-relog-dashboard-widget .keen-slider__slide {
+    width: 100%;
+    /*aspect-ratio: 2 / 1; */
+    user-select: none;
+    background-color: #f9f9f9;
+}
+.jay-relog-dashboard-widget .keen-slider__slide a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.jay-relog-dashboard-widget .keen-slider__slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+    pointer-events: none;
+    border-bottom: 1px solid #eee;
+}
+
+/* --- استایل فلش‌ها (کپی شده از پارسی‌دیت) --- */
+.jay-relog-dashboard-widget .arrow {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    bottom: 5px; /* پارسی‌دیت فلش‌ها را پایین می‌گذارد */
+    transform: translateY(-50%);
+    fill: #fff;
+    cursor: pointer;
+    margin: 0;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 2;
+    background: rgba(255,255,255,.3) no-repeat center;
+    background-size: 15px;
+}
+.jay-relog-dashboard-widget .arrow:after {
+    display: none;
+}
+.jay-relog-dashboard-widget .arrow--left {
+    right: 33px; /* (راست چین) */
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' %3E%3Cpath d='M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z' %3E%3C/path%3E%3C/svg%3E");
+}
+.jay-relog-dashboard-widget .arrow--right {
+    right: 7px; /* (راست چین) */
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' %3E%3Cpath d='M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z'%3E%3C/path%3E%3C/svg%3E");
+}
+.jay-relog-dashboard-widget .arrow--disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+/* (جدید) استایل‌های حالت غیرفعال کپی شده */
+.jay-relog-dashboard-widget .arrow--disabled.arrow--left {
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' fill='grey' viewBox='0 0 24 24' %3E%3Cpath d='M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z' %3E%3C/path%3E%3C/svg%3E");
+}
+.jay-relog-dashboard-widget .arrow--disabled.arrow--right {
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' fill='grey' viewBox='0 0 24 24' %3E%3Cpath d='M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+/* --- استایل نقطه‌ها (کپی شده از پارسی‌دیت) --- */
+.jay-relog-dashboard-widget .dots {
+    display: flex;
+    justify-content: center;
+    /* (جدید) نقطه‌ها اکنون در پایین کانتینر ناوبری هستند */
+    padding: 10px 0;
+    background-color: #f0f0f1;
+    border-bottom: 1px solid #eee;
+}
+.jay-relog-dashboard-widget .dot {
+    border: none;
+    width: 3px;
+    height: 3px;
+    background: #c5c5c5;
+    border-radius: 50%;
+    margin: 0 3px;
+    padding: 2px;
+    cursor: pointer;
+}
+.jay-relog-dashboard-widget .dot:focus {
+    outline: 0;
+}
+.jay-relog-dashboard-widget .dot.dot--active {
+    background: #000;
+}
+
+/* --- (جدید) استایل بخش "این چیست؟" (کپی شده از پارسی‌دیت) --- */
+#sponsorship-guide {
+    position: absolute;
+    z-index: 999;
+    top: 5px;
+    left: 5px; /* (چپ چین) */
+}
+#sponsorship-guide .question {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .6);
+    backdrop-filter: blur(5px);
+    transition: width .3s ease-in-out,height .3s ease-in-out;
+    overflow: hidden;
+    color: #fff;
+    padding: 3px;
+    position: absolute;
+    left: 0;
+}
+#sponsorship-guide .question span:nth-child(2) {
+    width: 0;
+    transition: .3s ease-in-out;
+    margin: 0;
+    overflow: hidden;
+}
+/* (جدید) حالت هاور برای نمایش متن "این چیست؟" */
+#sponsorship-guide .question:hover {
+    width: auto;
+    height: auto;
+    padding: 3px 0 3px 10px; /* (چپ چین) */
+    border-radius: 36px;
+}
+#sponsorship-guide .question:hover span {
+    display: inline;
+    width: auto;
+    margin-right: 5px; /* (چپ چین) */
+    white-space: nowrap;
+}
+/* (جدید) منوی باز شونده "این چیست؟" */
+#sponsorship-guide ul {
+    display: none;
+    position: relative;
+    list-style: none;
+    margin: 37px 0 0 0;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    background: #fff;
+    padding: 3px;
+    border-radius: 5px;
+    box-shadow: 0 0 8px #444;
+}
+#sponsorship-guide ul:before {
+    content: "";
+    position: absolute;
+    border: 11px solid transparent;
+    border-bottom-color: #fff;
+    margin-left: -10px;
+    top: -21px;
+    left: 14px; /* (چپ چین) */
+    z-index: 1;
+}
+#sponsorship-guide ul.show {
+    display: block;
+    opacity: 1;
+}
+#sponsorship-guide ul li {
+    margin: 5px 0;
+}
+#sponsorship-guide ul li a {
+    text-decoration: none;
+    background: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background .3s;
+    display: flex; /* (جدید) برای هم‌ترازی آیکون */
+    align-items: center;
+    font-size: 12px;
+}
+#sponsorship-guide ul li a .dashicons {
+    font-size: 16px;
+    margin-right: -2px;
+}
+#sponsorship-guide ul li a:hover {
+    background: #f0f0f0;
+}
+
+/* --- (جدید) استایل فید اخبار (کپی شده از پارسی‌دیت) --- */
+.jay-relog-dashboard-widget .wordpress-news {
+    padding: 12px;
+}
+.jay-relog-dashboard-widget .wordpress-news ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.jay-relog-dashboard-widget .wordpress-news li {
+    margin-bottom: 8px;
+}
+.jay-relog-dashboard-widget .wordpress-news li:last-child {
+    margin-bottom: 0;
+}
+.jay-relog-dashboard-widget .wordpress-news a {
+    text-decoration: none;
+    color: #3c434a;
+}
+.jay-relog-dashboard-widget .wordpress-news a:hover {
+    color: #0073aa;
+}
+.jay-relog-dashboard-widget .rss-widget {
+    font-size: 13px;
+}
+
+/* --- (جدید) استایل فوتر (کپی شده از پارسی‌دیت) --- */
+.jay-relog-dashboard-widget .community-events-footer {
+    margin: 0;
+    padding: 12px;
+    border-top: 1px solid #eee;
+    background: #fcfcfc;
+    font-size: 12px;
+    color: #777;
+    text-align: left; /* پارسی‌دیت این را چپ‌چین می‌کند */
+    direction: ltr;
+}
+.jay-relog-dashboard-widget .community-events-footer a {
+    text-decoration: none;
+}
+.jay-relog-dashboard-widget .community-events-footer .dashicons {
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+/* --- (حذف شد) --- */
+/* .helpful-links دیگر استفاده نمی‌شود */
