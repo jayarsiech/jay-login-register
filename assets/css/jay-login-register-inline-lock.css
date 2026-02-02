@@ -1,0 +1,306 @@
+
+.jay-inline-lock-form-wrapper {
+    width: 100%;
+    max-width: 350px; /* یا عرض دلخواه */
+    margin: 0 auto; /* وسط‌چین کردن فرم */
+    padding: 10px; /* کمی فاصله داخلی */
+    box-sizing: border-box;
+     direction: rtl; /* برای فرم‌های فارسی */
+}
+
+.jay-inline-lock-form-wrapper h4 {
+    margin: 0 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 1.1em;
+    text-align: center;
+    color: #333; /* رنگ مناسب برای زمینه روشن */
+}
+
+.jay-inline-field {
+    margin-bottom: 15px;
+}
+
+.jay-inline-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.jay-inline-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'iransans' !important;
+    box-sizing: border-box;
+    font-size: 1em;
+    direction: ltr; /* برای شماره موبایل و ایمیل بهتره ltr باشه */
+    text-align: left;
+}
+ /* برای فیلد کوچک کپچا ریاضی */
+.jay-inline-input-small {
+     width: 80px;
+     display: inline-block;
+     margin-left: 10px;
+     vertical-align: middle;
+}
+ .jay-inline-captcha-math label {
+     display: inline-block;
+     vertical-align: middle;
+ }
+
+.jay-inline-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #0073aa;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    font-family: iransans !important;
+    transition: background-color 0.2s ease;
+}
+
+.jay-inline-button:hover {
+    background-color: #005a87;
+}
+
+/* استایل لودر ساده */
+.jay-inline-spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #0073aa;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: jay-inline-spin 1s linear infinite;
+    margin: 20px auto; 
+}
+
+@keyframes jay-inline-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* استایل پیغام خطا */
+.jay-inline-error {
+    color: #d63638; 
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 15px;
+}
+.jay-inline-notice {
+     font-size: 0.70em !important;
+     color: #777;
+     text-align: center;
+     margin-top: -10px;
+     margin-bottom: 15px;
+}
+
+
+/* جداکننده "یا" */
+.jay-inline-separator {
+    text-align: center;
+    margin: 20px 0;
+    color: #aaa;
+    position: relative;
+}
+.jay-inline-separator span {
+    background-color: #fff; /* باید با رنگ پس‌زمینه overlay یکی باشه */
+    padding: 0 10px;
+    position: relative;
+    z-index: 1;
+}
+.jay-inline-separator::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #eee;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 0;
+}
+
+/* دکمه‌های ورود اجتماعی */
+.jay-inline-social-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* فاصله بین دکمه‌ها */
+}
+.jay-inline-social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+    border: 1px solid transparent; /* برای حفظ فضا */
+}
+.jay-inline-social-button:hover {
+    opacity: 0.85;
+}
+.jay-social-icon {
+    width: 18px;
+    height: 18px;
+    margin-left: 8px; /* فاصله آیکون از متن */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* استایل دکمه گوگل */
+.jay-inline-google {
+    background-color: #fff;
+    color: #444;
+    border: 1px solid #ccc;
+}
+.jay-inline-google .jay-social-icon.google {
+    background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' xmlns:xlink='http://www.w3.org/1999/xlink' style='display: block;'%3E%3Cpath fill='%23EA4335' d='M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z'%3E%3C/path%3E%3Cpath fill='%234285F4' d='M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z'%3E%3C/path%3E%3Cpath fill='%23FBBC05' d='M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z'%3E%3C/path%3E%3Cpath fill='%2334A853' d='M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z'%3E%3C/path%3E%3Cpath fill='none' d='M0 0h48v48H0z'%3E%3C/path%3E%3C/svg%3E")
+}
+/* --- استایل‌های فرم OTP درون خطی --- */
+
+.jay-inline-otp-form h4 {
+    margin-bottom: 10px; /* فاصله کمتر */
+}
+.jay-inline-otp-form p {
+    font-size: 0.9em;
+    color: #666;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* استایل OTP تک فیلدی */
+.jay-inline-otp-input-single {
+    text-align: center;
+    letter-spacing: 5px; /* فاصله بین ارقام */
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* استایل OTP چند فیلدی */
+.jay-inline-otp-fields {
+    display: flex;
+    justify-content: center;
+    gap: 8px; /* فاصله بین فیلدها */
+    direction: ltr; /* فیلدها از چپ به راست باشن */
+    margin-bottom: 20px;
+}
+.jay-inline-otp-digit {
+    width: 40px; /* عرض هر فیلد */
+    height: 45px; /* ارتفاع هر فیلد */
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    box-sizing: border-box;
+    /* حذف فلش‌های بالا/پایین برای فیلد عددی در برخی مرورگرها */
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+.jay-inline-otp-digit::-webkit-outer-spin-button,
+.jay-inline-otp-digit::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* استایل تایمر و ارسال مجدد */
+.jay-inline-timer-wrapper {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #777;
+}
+.jay-inline-resend-link {
+    color: #0073aa;
+    text-decoration: none;
+    margin-left: 5px;
+    cursor: pointer;
+}
+/* استایل دکمه‌های غیرفعال (Disabled) در فرم اینلاین */
+.jay-inline-button:disabled,
+.jay-inline-button[disabled],
+.jay-inline-button-secondary:disabled,
+.jay-inline-button-secondary[disabled] {
+    background-color: #cccccc !important; /* رنگ خاکستری */
+    color: #666666 !important; /* رنگ متن تیره‌تر */
+    border-color: #bbbbbb !important;
+    cursor: not-allowed !important; /* تغییر شکل موس */
+    opacity: 0.7;
+    box-shadow: none !important;
+    transform: none !important; /* جلوگیری از انیمیشن کلیک */
+}
+
+/* اگر لودر داخل دکمه است، رنگ آن را حفظ کن */
+.jay-inline-button:disabled .jay-inline-spinner {
+    border-left-color: #666666;
+}
+.jay-inline-resend-link[disabled] {
+    color: #aaa;
+    cursor: not-allowed;
+    pointer-events: none; /* غیرفعال کردن کلیک */
+}
+.jay-inline-timer {
+    font-weight: bold;
+    direction: ltr; /* تایمر معمولا انگلیسیه */
+    display: inline-block; /* برای جلوگیری از شکستن خط */
+}
+
+/* استایل برای خطای بالای فرم (وقتی prepend=true) */
+ .jay-inline-lock-form-wrapper > .jay-inline-error {
+     margin-bottom: 15px;
+ }
+
+/* استایل screen-reader-text (برای لیبل مخفی OTP تک فیلدی) */
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+}
+
+/* استایل برای دکمه ثانویه (بله) */
+.jay-inline-button-secondary {
+    background-color: #fff;
+    color: #00b894;
+    border: 1px solid #00b894;
+    margin-top: 10px;
+}
+.jay-inline-button-secondary:hover {
+    background-color: #f5fffd;
+    color: #00a182;
+}
+/* استایل فرم انتخاب */
+.jay-inline-choice-form p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* استایل تایمر مسدودیت داخل کادر خطا */
+.jay-lockout-timer-span {
+    display: inline-block;
+    direction: ltr;
+    color: #a00; /* قرمز تیره‌تر برای خوانایی روی پس‌زمینه قرمز روشن */
+}
