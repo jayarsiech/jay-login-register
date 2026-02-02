@@ -1,0 +1,347 @@
+.jay-lock-settings-panel {
+    background: #f9f9f9;
+    border-top: 1px solid #eee;
+    margin: 15px -15px -15px; /* چسبیدن به لبه‌های کادر والد */
+    padding: 15px;
+    border-radius: 0 0 4px 4px;
+}
+.jay-lock-settings-panel label {
+    margin-top: 10px;
+    display: block;
+    font-weight: 500;
+    font-size: 13px;
+}
+.jay-lock-settings-panel label:first-child {
+    margin-top: 0;
+}
+.jay-lock-settings-panel input.widefat {
+    width: 100%;
+    margin-top: 5px;
+}
+.jay-lock-settings-panel hr {
+    border: 0;
+    border-top: 1px solid #e0e0e0;
+    margin: 20px 0;
+}
+    /* استایل دکمه اصلی */
+    .jay-add-content-lock-button {
+        color: #1d2327 !important;
+        border-color: #8c8f94 !important;
+    }
+
+    .jay-add-content-lock-button.active {
+        background: #d63638 !important;
+        border-color: #b02a2c !important;
+        color: #fff !important;
+        box-shadow: inset 0 -1px 0 #b02a2c !important;
+    }
+    .jay-add-content-lock-button.active:hover {
+        background: #b02a2c !important;
+        border-color: #8e2224 !important;
+    }
+    .jay-add-content-lock-button.active-edit-mode {
+        background: #4e61eb !important;
+        border-color: #3244c8 !important;
+        color:#fff !important;
+    }
+
+    /* استایل پس‌زمینه مودال */
+    .jay-lock-modal-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0s 0.3s linear;
+    }
+    .jay-lock-modal-backdrop.visible {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.3s ease;
+    }
+    body.jay-lock-modal-open {
+        overflow: hidden !important;
+    }
+
+    /* استایل پنجره مودال */
+    .jay-lock-modal-content {
+        background: #fff;
+        width: 90%;
+        max-width: 500px;
+        max-height: 90vh;
+        border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    padding: 0; 
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        transform: scale(0.9);
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .jay-lock-modal-backdrop.visible .jay-lock-modal-content {
+         transform: scale(1);
+         opacity: 1;
+    }
+
+.jay-lock-modal-content h2 {
+    margin: 0;
+    font-size: 1.3em;
+    padding: 20px 30px 15px;
+    border-bottom: 1px solid #eee;
+    background: #fff;
+    border-radius: 8px 8px 0 0;
+    flex-shrink: 0; /* جلوگیری از جمع شدن */
+}
+.jay-lock-modal-content > p {
+    padding: 0 30px;
+    margin: 10px 0 15px;
+    color: #666;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+.jay-lock-modal-body {
+    padding: 0 30px 20px;
+    overflow-y: auto; /* اسکرول عمودی */
+    flex-grow: 1; /* پر کردن فضای باقیمانده */
+    
+    /* استایل اسکرول بار زیبا (Webkit) */
+    scrollbar-width: thin;
+    scrollbar-color: #ccc #f1f1f1;
+}
+.jay-lock-modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+.jay-lock-modal-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+.jay-lock-modal-body::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+    border: 2px solid #f1f1f1;
+}
+
+    /* استایل گزینه‌ها */
+   .jay-lock-modal-option {
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px solid #4cd7d7;
+    border-radius: 4px;
+    background:#e5fff7;
+    transition: border-color 0.2s;
+}
+.jay-lock-modal-option:hover {
+    border-color: #bbb;
+}
+.jay-lock-modal-option label {
+    display: block;
+    cursor: pointer;
+}
+.jay-lock-modal-option strong {
+    font-size: 14px;
+    margin-right: 5px;
+}
+.jay-lock-modal-option .description {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+    margin-right: 25px; /* تورفتگی زیر رادیو */
+}
+#jay-lock-inline-warning {
+    background: #fff3cd;
+    border: 1px solid #ffeeba;
+    color: #856404;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 4px;
+    font-size: 12px;
+    display: none; /* مخفی به صورت پیش‌فرض */
+}
+
+    /* استایل دکمه‌های مودال */
+.jay-lock-modal-actions {
+    padding: 20px 30px;
+    border-top: 1px solid #eee;
+    background: #f9f9f9;
+    border-radius: 0 0 8px 8px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-shrink: 0; /* جلوگیری از جمع شدن */
+}
+
+/* استایل بلوک گوتنبرگ در ادمین */
+.jay-gutenberg-lock-wrapper {
+    border: 2px dashed #0073aa;
+    border-radius: 8px;
+    padding: 0;
+    margin: 20px 0;
+    background: #f9f9f9;
+    overflow: hidden;
+}
+
+.jay-lock-header {
+    background: #0073aa;
+    color: #fff;
+    padding: 8px 15px;
+    font-size: 13px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.jay-lock-inner-content {
+    padding: 15px;
+    min-height: 50px;
+}
+/* --- اصلاح استایل بخش اطلاعات تکمیلی و فیلدهای سفارشی --- */
+
+/* 1. مرتب‌سازی کانتینر اصلی اطلاعات شخصی (بخش تو-رفته) */
+#jay_inline_personal_info_options {
+    background-color: #fff; /* حذف پس‌زمینه خاکستری احتمالی */
+    border-right: 3px solid #0073aa !important; /* تغییر رنگ خط کنار به رنگ اصلی وردپرس */
+    margin-right: 15px !important;
+    padding-right: 15px !important;
+    opacity: 1 !important; /* اطمینان از دیده شدن */
+}
+
+/* 2. استایل کانتینر فیلدهای سفارشی (باکس خاکستری) */
+#jay_inline_custom_fields_container {
+    background: #f6f7f7 !important;
+    border: 1px solid #dcdcde;
+    box-sizing: border-box; /* جلوگیری از بیرون زدگی پدینگ */
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden; /* اطمینان از اینکه هیچ چیزی بیرون نزند */
+}
+
+/* 3. استایل آیتم‌های هر فیلد (کارت‌های سفید) */
+.jay-custom-field-item {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%; /* جلوگیری از عریض‌تر شدن از مادر */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* کمی سایه برای زیبایی */
+}
+
+/* 4. اصلاح بخش گزینه‌ها (که مشکل بیرون زدگی داشت) */
+.jay-cf-options-wrapper {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.jay-cf-options-list {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 5. تنظیم دقیق ردیف‌های Flex برای جلوگیری از شکستن */
+.jay-cf-option-row {
+    display: flex;
+    gap: 8px !important; /* فاصله بین فیلدها */
+    margin-bottom: 8px !important;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+/* 6. نکته کلیدی: تنظیم ورودی‌های داخل Flex */
+.jay-cf-option-row input[type="text"] {
+    flex: 1; /* تقسیم فضا به نسبت مساوی */
+    min-width: 0; /* حیاتی: اجازه می‌دهد فیلد کوچک شود تا جا بشود */
+    width: auto !important; /* حذف عرض‌های ثابت مزاحم */
+    max-width: 100%;
+}
+
+/* استایل آیکون حذف */
+.jay-remove-option {
+    flex-shrink: 0; /* جلوگیری از جمع شدن آیکون */
+    cursor: pointer;
+    color: #b32d2e;
+}
+.jay-remove-option:hover {
+    color: #d63638;
+}
+
+/* دکمه افزودن گزینه */
+.jay-add-option-btn {
+    text-decoration: none;
+    font-weight: 600;
+}
+/* --- استایل‌های جدید فیلد ساز پیشرفته مودال --- */
+
+/* فیلد آیتم */
+.jay-custom-field-item {
+    background: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* هدر آکاردئونی */
+.jay-cf-header {
+    background: #f3f3f3;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move; /* نشانگر جابجایی */
+    border-bottom: 1px solid #ddd;
+}
+
+.jay-cf-body {
+    padding: 15px;
+    background: #fff;
+    display: none; /* پیش‌فرض بسته */
+}
+
+/* استایل سوییچ (Toggle Switch) */
+.jay-editor-switch {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 13px;
+    user-select: none;
+}
+.jay-editor-switch input { opacity: 0; width: 0; height: 0; }
+.jay-editor-slider {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 20px;
+    transition: .4s;
+    margin-left: 8px;
+    vertical-align: middle; 
+}
+.jay-editor-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+.jay-editor-switch input:checked + .jay-editor-slider { background-color: #0073aa; }
+.jay-editor-switch input:checked + .jay-editor-slider:before { transform: translateX(16px); }
+
+/* استایل پلیس‌هلدر درگ */
+.jay-cf-sortable-placeholder {
+    border: 2px dashed #b5b5b5;
+    background: #f0f0f1;
+    height: 45px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
