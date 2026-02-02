@@ -1,0 +1,120 @@
+/* --- استایل مخصوص حالت "فقط دکمه" --- */
+
+.jay-content-lock-wrapper.jay-lock-button-only {
+    display: block; /* از grid خارج می‌شود */
+    border: none;
+    margin: 1em 0;
+    background: transparent;
+    overflow: visible;
+}
+.jay-lock-button[disabled], 
+.jay-lock-button.disabled {
+    opacity: 0.7;
+    cursor: wait;
+    filter: grayscale(50%);
+    pointer-events: none;
+}
+.jay-content-lock-wrapper.jay-lock-button-only .jay-lock-overlay {
+    background: transparent;
+    padding: 0;
+    display: block;
+    text-align: center;
+}
+
+.jay-content-lock-wrapper.jay-lock-button-only .jay-lock-button {
+    display: inline-block;
+    min-width: 200px;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.jay-content-lock-wrapper.jay-lock-button-only .jay-locked-content-preview {
+    display: none;
+}
+.jay-content-lock-wrapper {
+    display: grid; 
+    margin: 2em 0;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    position: relative; 
+}
+.jay-locked-content-preview {
+    grid-area: 1 / 1; 
+    filter: blur(5px);
+    -webkit-filter: blur(5px); 
+    user-select: none; 
+    pointer-events: none; 
+    line-height: 1.8;
+    color: #555;
+    padding: 20px;
+    z-index: 1;
+}
+.jay-lock-overlay {
+    grid-area: 1 / 1; 
+    background: linear-gradient(to top, rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 0.85) 60%, rgba(255, 255, 255, 0) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; 
+    padding: 30px;
+    text-align: center;
+    z-index: 2; 
+}
+.jay-lock-overlay-icon {
+    font-size: 36px;
+    color: #0073aa;
+    margin-bottom: 15px;
+    opacity: 0.7;
+}
+.jay-lock-overlay h4, .jay-lock-overlay p {
+    margin: 0;
+    padding: 0;
+}
+.jay-lock-overlay h4 {
+    font-size: 1.2em;
+    color: #1d2327;
+    margin-bottom: 10px;
+}
+.jay-lock-overlay p {
+    font-size: 0.95em;
+    color: #444;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+.jay-lock-overlay .jay-lock-button {
+    background-color: #0073aa;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 25px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.jay-lock-overlay .jay-lock-button:hover {
+    background-color: #005a87; 
+    transform: translateY(-2px);
+}
+
+[id^="jay-lock-"] {
+    transition: all 0.5s ease-in-out !important; 
+}
+.jay-lock-highlight {
+    background-color: #fffacd !important;
+    border-radius: 12px !important;
+    transform: scale(1.01) !important; 
+    z-index: 99 !important;
+    position: relative !important; 
+    padding: 5px !important;
+}
+.jay-lock-highlight > * {
+    background-color: transparent !important;
+}
+
+.jay-spinner-wrapper, .jay-spinner, .jay-inline-lock-form-wrapper {
+}
+
